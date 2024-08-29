@@ -1,1 +1,11 @@
-<p>sidebar works!</p>
+<aside>
+    <ul>
+      <li><a routerLink="/home" routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"><span><mat-icon>home</mat-icon> <span class="ml-5">Home</span>
+          </span></a></li>
+      <li><a routerLink="/user" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
+          <span><mat-icon>people</mat-icon> <span class="ml-5">Users</span> </span></a></li>
+      <li><a routerLink="/settings" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><span>
+            <mat-icon>settings</mat-icon> <span class="ml-5">Settings</span> </span></a></li>
+    </ul>
+  </aside>

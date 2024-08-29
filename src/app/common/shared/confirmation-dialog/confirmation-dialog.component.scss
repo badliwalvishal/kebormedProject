@@ -1,0 +1,39 @@
+::ng-deep .mat-mdc-dialog-container {
+    transform: translate(-50%, -50%);
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    height: 250px;
+    width: 400px;
+  }
+  
+  .mat-title {
+    margin-left: 20px;
+  }
+  
+  .mat-content {
+    margin-left: 20px;
+  }
+  
+  .action-button {
+    margin: 20px;
+  
+    .confirm {
+      cursor: pointer;
+      background-color: #f44336;
+      border: none;
+      color: white;
+      margin-right: 8px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  
+    .cancel {
+      cursor: pointer;
+      background-color: #2196f3;
+      border: none;
+      color: white;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  }

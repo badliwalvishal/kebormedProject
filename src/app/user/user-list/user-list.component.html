@@ -1,0 +1,6 @@
+<app-sub-navigation>
+    <h3 class="padding-align" left>Users</h3>
+  </app-sub-navigation>
+  
+  <app-user-list-table [users]="(users$ | async) ?? []"
+    (deleteUser)="onDeleteUserConfirmation($event)"></app-user-list-table>

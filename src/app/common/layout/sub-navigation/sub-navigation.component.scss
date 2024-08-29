@@ -1,0 +1,33 @@
+.sub-nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px;
+}
+
+.sub-nav button {
+    margin-left: 10px;
+    border: none;
+}
+
+.create-user {
+    background-color: #12ad6f;
+    color: white;
+    margin-right: 8px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.create-user:hover {
+    background-color: #056334;
+}
+
+.import-user {
+    background-color: hsl(190, 91%, 47%);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.import-user:hover {
+    background-color: #1976d2;
+}
