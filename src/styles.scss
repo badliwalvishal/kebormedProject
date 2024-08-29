@@ -1,3 +1,6 @@
+@import 'styles/colors.light';
+@import 'styles/colors.dark';
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -28,22 +31,36 @@ aside {
     padding: 1em;
 }
 
+body.light-theme {
+    --background-color-sub-nav: #{$background-color-light-sub-nav};
+    --background-color-aside: #{$background-color-light-aside};
+    --background-color-nav: #{$background-color-light-nav};
+    --text-color: #{$text-color-light};
+}
+
+body.dark-theme {
+    --background-color-sub-nav: #{$background-color-dark-sub-nav};
+    --background-color-aside: #{$background-color-dark-aside};
+    --background-color-nav: #{$background-color-dark-nav};
+    --text-color: #{$text-color-dark};
+}
+
 .sub-nav {
-    background-color: #fff2cd;
+    background-color: var(--background-color-sub-nav);
 }
 
 aside {
-    background-color: #d9e8fb;
+    background-color: var(--background-color-aside);
 }
 
 nav {
-    background-color: #1a73e8;
+    background-color: var(--background-color-nav);
 }
 
 .sub-nav,
 aside li a,
 nav {
-    color: #000000
+    color: var(--text-color);
 }
 
 aside ul {
@@ -65,7 +82,7 @@ aside ul li a {
 
 aside ul li a.active {
     color: #fff;
-    background-color: #1a73e8;
+    background-color: var(--background-color-nav);;
 }
 
 aside ul li a span {
