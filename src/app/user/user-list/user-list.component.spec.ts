@@ -17,6 +17,7 @@ import { SubNavigationComponent } from '../../common/layout/sub-navigation/sub-n
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserListTableComponent } from '../../common/shared/shared-user/user-list-table/user-list-table.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const mockUser: User = {
   id: 1,
@@ -43,7 +44,7 @@ describe('UserListComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [ UserListComponent,SubNavigationComponent,UserListTableComponent ],
-      imports: [ MatMenuModule, MatIconModule, MatButtonModule,BrowserAnimationsModule,MatTableModule,MatDialogModule ],
+      imports: [ MatMenuModule, MatIconModule, MatButtonModule,BrowserAnimationsModule,MatTableModule,MatDialogModule,MatProgressSpinnerModule ],
       providers: [
         { provide: UserService, useValue: mockUserService },
         { provide: UserStore, useValue: mockUserStore },

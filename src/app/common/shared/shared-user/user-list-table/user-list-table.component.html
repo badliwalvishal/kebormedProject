@@ -1,4 +1,8 @@
-<div class="mat-table table-container">
+<div *ngIf="!users || users.length === 0" class="loader-container">
+    <mat-spinner></mat-spinner>
+</div>
+
+<div class="mat-table table-container"*ngIf="users && users.length > 0">
     <mat-table [dataSource]="users">
         
         <ng-container matColumnDef="name">

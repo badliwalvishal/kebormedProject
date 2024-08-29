@@ -17,5 +17,13 @@
     age:string;
   }
 
+  export interface UserCount {
+    totalUsers: number;
+    activeUsers: number;
+    oldAgeUsers: number;
+    youngUsers: number;
+    inActiveUsers: number;
+  }
+
   
   

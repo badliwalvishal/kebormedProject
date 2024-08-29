@@ -15,13 +15,16 @@ import { UserFormComponent } from './shared-user/user-form/user-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SharedChartComponent } from './shared-chart/shared-chart.component';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
 @NgModule({
   declarations: [
     ConfirmationDialogComponent,
     UserListTableComponent,
     UserViewComponent,
-    UserFormComponent
+    UserFormComponent,
+    SharedChartComponent
   ],
   imports: [
     CommonModule,
@@ -35,8 +38,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    CanvasJSAngularChartsModule
   ],
-  exports:[ConfirmationDialogComponent,UserListTableComponent,UserViewComponent,UserFormComponent]
+  exports:[ConfirmationDialogComponent,UserListTableComponent,UserViewComponent,UserFormComponent,SharedChartComponent]
 })
 export class SharedModule { }
