@@ -11,6 +11,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LayoutModule } from '../common/layout/layout.module';
 import { SharedModule } from '../common/shared/shared.module';
 import { MatIcon } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { MatIcon } from '@angular/material/icon';
     MatProgressSpinnerModule,
     LayoutModule,
     SharedModule,
-    MatIcon
+    MatIcon,
+    MatMenuModule,
+    MatSnackBarModule
   ]
 })
 export class UserModule { }

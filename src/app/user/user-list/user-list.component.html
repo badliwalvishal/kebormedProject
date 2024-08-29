@@ -1,5 +1,20 @@
 <app-sub-navigation>
     <h3 class="padding-align" left>Users</h3>
+    <div class="menu-container" right>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item class="open-user" (click)="openUserFormDialog()">
+          <mat-icon>add_circle_outline</mat-icon>
+          <span>Create</span>
+        </button>
+        <button mat-menu-item (click)="onImport()">
+          <mat-icon>file_upload</mat-icon>
+          <span>Import</span>
+        </button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="More options">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
   </app-sub-navigation>
   
   <app-user-list-table [users]="(users$ | async) ?? []"

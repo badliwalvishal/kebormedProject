@@ -11,12 +11,17 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { UserFormComponent } from './shared-user/user-form/user-form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
     ConfirmationDialogComponent,
     UserListTableComponent,
-    UserViewComponent
+    UserViewComponent,
+    UserFormComponent
   ],
   imports: [
     CommonModule,
@@ -27,8 +32,11 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatProgressSpinnerModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSnackBarModule
   ],
-  exports:[ConfirmationDialogComponent,UserListTableComponent,UserViewComponent]
+  exports:[ConfirmationDialogComponent,UserListTableComponent,UserViewComponent,UserFormComponent]
 })
 export class SharedModule { }

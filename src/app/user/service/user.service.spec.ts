@@ -74,4 +74,15 @@ describe('UserService', () => {
     req.flush('Error', { status: 500, statusText: 'Server Error' });
   });
 
+  it('should create a new user and store it', () => {
+    const newUser: User = { id: 1, name: 'Puneet Singh', city: 'Gurugram', email: 'puneet@gmail.com', mobile: '8076665605', country: 'INDIA', age: '28' };
+    service.createUser(newUser).subscribe(user => {
+      expect(user).toEqual(newUser);
+    });
+    const req = httpMock.expectOne(service['apiUrl']);
+    expect(req.request.method).toBe('POST');
+    req.flush(newUser);
+    expect(userStoreSpy.addUser).toHaveBeenCalledWith(newUser);
+  });
+
 });

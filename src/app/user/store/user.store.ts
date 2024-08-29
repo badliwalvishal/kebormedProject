@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { createStore } from '@ngneat/elf';
-import { withEntities, selectAllEntities, setEntities, deleteEntities, getEntity } from '@ngneat/elf-entities';
+import { withEntities, selectAllEntities, setEntities, deleteEntities, getEntity, addEntities } from '@ngneat/elf-entities';
 import { User } from '../../common/interface/user.model';
 import { startWith } from 'rxjs';
 import { Router } from '@angular/router';
@@ -36,6 +36,10 @@ export class UserStore {
 
   deleteUser(userId: number) {
     this.store.update(deleteEntities(userId));
+  }
+
+  addUser(user: User) {
+    this.store.update(addEntities(user));
   }
 
 }

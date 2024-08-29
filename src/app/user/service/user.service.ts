@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { UserStore } from '../store/user.store';
-import { User } from '../../common/interface/user.model';
+import { User, UserCreate } from '../../common/interface/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +29,13 @@ export class UserService {
   deleteUser(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`).pipe(
       tap(() => this.userStore.deleteUser(id)),
+      catchError(this.handleError)
+    );
+  }
+
+  createUser(user: UserCreate): Observable<User> {
+    return this.http.post<User>(this.apiUrl, user).pipe(
+      tap(newUser => this.userStore.addUser(newUser)),
       catchError(this.handleError)
     );
   }
