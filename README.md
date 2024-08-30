@@ -2,13 +2,27 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
 
+## Pre-Requisites
+
+Before you begin, ensure you have the following installed:
+- Angular CLI: `17.3.8`
+- Node.js: `20.16.0`
+- npm: `10.8.1`
+
+
+## Installation
+
+To set up the project locally, follow these steps:
+
+1.Clone the repository:
+git clone https://github.com/badliwalvishal/kebormedProject.git
+
+2.Install the required dependencies:
+npm install
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -21,6 +35,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Further help
 
