@@ -1,0 +1,10 @@
+<app-sub-navigation>
+    <h3 class="padding-align" left>Settings</h3>
+</app-sub-navigation>
+<mat-card class="settings-card">
+<mat-card-content class="theme-container">
+  <span class="theme-text">Dark Mode</span>
+  <mat-slide-toggle (change)="toggleTheme($event)" color="primary" [checked]="isDarkMode" class="theme-toggle">
+  </mat-slide-toggle>
+</mat-card-content>
+</mat-card>

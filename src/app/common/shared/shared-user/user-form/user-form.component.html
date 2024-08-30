@@ -1,0 +1,68 @@
+<mat-card class="user-form-card">
+    <mat-card-title>User Information</mat-card-title>
+    <mat-card-content>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+          <mat-error *ngIf="control['name'].invalid && (control['name'].dirty || control['name'].touched)">
+            <ng-container *ngIf="control['name'].errors?.['required']">Name is required</ng-container>
+          </mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>City</mat-label>
+          <input matInput formControlName="city" />
+          <mat-error *ngIf="control['city'].invalid && (control['city'].dirty || control['city'].touched)">
+            <ng-container *ngIf="control['city'].errors?.['required']">City is required</ng-container>
+          </mat-error>
+        </mat-form-field>
+      </div>
+  
+      <div class="form-row">
+      <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Email</mat-label>
+          <input matInput id="email" formControlName="email" />
+          <mat-error *ngIf="control['email'].invalid && (control['email'].dirty || control['email'].touched)">
+            <ng-container *ngIf="control['email'].errors?.['required']">Email is required</ng-container>
+            <ng-container *ngIf="control['email'].errors?.['email']">Invalid email format</ng-container>
+          </mat-error>
+        </mat-form-field>
+      
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Mobile</mat-label>
+          <input matInput id="mobile" formControlName="mobile" />
+          <mat-error *ngIf="control['mobile'].invalid && (control['mobile'].dirty || control['mobile'].touched)">
+            <ng-container *ngIf="control['mobile'].errors?.['required']">Mobile is required</ng-container>
+            <ng-container *ngIf="control['mobile'].errors?.['pattern']">Mobile must be 10 digits</ng-container>
+          </mat-error>
+        </mat-form-field>
+        </div>
+      
+        <div class="form-row">
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Country</mat-label>
+          <input matInput id="country" formControlName="country" />
+          <mat-error *ngIf="control['country'].invalid && (control['country'].dirty || control['country'].touched)">
+            <ng-container *ngIf="control['country'].errors?.['required']">Country is required</ng-container>
+          </mat-error>
+        </mat-form-field>
+      
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Age</mat-label>
+          <input matInput id="age" formControlName="age" />
+          <mat-error *ngIf="control['age'].invalid && (control['age'].dirty || control['age'].touched)">
+            <ng-container *ngIf="control['age'].errors?.['required']">Age is required</ng-container>
+            <ng-container *ngIf="control['age'].errors?.['pattern']">Age must be a number</ng-container>
+          </mat-error>
+        </mat-form-field>
+        </div>
+  
+        <div class="submit-button-container">
+          <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">Submit</button>
+        </div>
+    </form>
+  </mat-card-content>
+  </mat-card>
+    

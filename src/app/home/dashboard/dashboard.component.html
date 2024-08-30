@@ -1,1 +1,59 @@
-<p>Hello World!</p>
+<app-sub-navigation>
+    <h3 class="padding-align" left>Dashboard</h3>
+</app-sub-navigation>
+<mat-card class="circular-dashboard-card">
+  <div class="circular-dashboard">
+    <div class="circular-progress-container total-users">
+      <div
+        class="circular-progress"
+        [style.background]="getProgressBackground(data.totalUsers, '#4CAF50')"
+      >
+        <span class="progress-number">{{ data.totalUsers }}</span>
+      </div>
+      <div class="progress-label">Total Users</div>
+    </div>
+
+    <div class="circular-progress-container active-users">
+      <div
+        class="circular-progress"
+        [style.background]="getProgressBackground(data.activeUsers, '#FF5722')"
+      >
+        <span class="progress-number">{{ data.activeUsers }}</span>
+      </div>
+      <div class="progress-label">Active Users</div>
+    </div>
+
+    <div class="circular-progress-container inactive-users">
+      <div
+        class="circular-progress"
+        [style.background]="getProgressBackground(data.inActiveUsers, '#1ee89b')"
+      >
+        <span class="progress-number">{{ data.inActiveUsers }}</span>
+      </div>
+      <div class="progress-label">Inactive Users</div>
+    </div>
+
+    <div class="circular-progress-container old-age-users">
+      <div
+        class="circular-progress"
+        [style.background]="getProgressBackground(data.oldAgeUsers, '#2196F3')"
+      >
+        <span class="progress-number">{{ data.oldAgeUsers }}</span>
+      </div>
+      <div class="progress-label">Old Age Users</div>
+    </div>
+
+    <div class="circular-progress-container young-users">
+      <div
+        class="circular-progress"
+        [style.background]="getProgressBackground(data.youngUsers, '#FFC107')"
+      >
+        <span class="progress-number">{{ data.youngUsers }}</span>
+      </div>
+      <div class="progress-label">Young Users</div>
+    </div>
+  </div>
+</mat-card>
+<mat-card class="circular-dashboard-card">
+  <app-shared-chart [chartOptions]="chartOptions"></app-shared-chart>
+</mat-card>

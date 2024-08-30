@@ -1,0 +1,52 @@
+<div *ngIf="user; else loading">
+    <div class="card-container">
+        <mat-card class="info-card">
+          <mat-card-header>
+            <mat-card-title>Full Name</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ user.name }}</p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="info-card">
+            <mat-card-header>
+              <mat-card-title>Age</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{ user.age }}</p>
+            </mat-card-content>
+          </mat-card>
+          <mat-card class="info-card">
+            <mat-card-header>
+              <mat-card-title>Email</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{ user.email }}</p>
+            </mat-card-content>
+          </mat-card>
+          <mat-card class="info-card">
+            <mat-card-header>
+              <mat-card-title>Phone</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{ user.mobile }}</p>
+            </mat-card-content>
+          </mat-card>
+          <mat-card class="info-card">
+            <mat-card-header>
+              <mat-card-title>Address</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{ user.city }}, {{ user.country }}</p>
+            </mat-card-content>
+          </mat-card>
+    </div>
+  </div>
+  
+  <ng-template #loading>
+    <div class="loading-container">
+      <mat-progress-spinner></mat-progress-spinner>
+      <p>Loading user details...</p>
+    </div>
+  </ng-template>
+  

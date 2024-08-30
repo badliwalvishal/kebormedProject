@@ -1,0 +1,34 @@
+<div *ngIf="!users || users.length === 0" class="loader-container">
+    <mat-spinner></mat-spinner>
+</div>
+
+<div class="mat-table table-container"*ngIf="users && users.length > 0">
+    <mat-table [dataSource]="users">
+        
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> <b>Name</b> </mat-header-cell>
+            <mat-cell *matCellDef="let user"> {{ user.name }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef> <b>Email </b></mat-header-cell>
+            <mat-cell *matCellDef="let user"> {{ user.email }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="phone">
+            <mat-header-cell *matHeaderCellDef> <b>Phone </b></mat-header-cell>
+            <mat-cell *matCellDef="let user"> {{ user.mobile }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef><b> Actions</b> </mat-header-cell>
+            <mat-cell *matCellDef="let user">
+                <button mat-button class="delete-button" (click)="openDeleteConfirmation(user.id)"><mat-icon>delete</mat-icon>Delete</button>
+                <button mat-button class="details-button" [routerLink]="['/user/detail/', user.id]"><mat-icon>visibility</mat-icon>View</button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>

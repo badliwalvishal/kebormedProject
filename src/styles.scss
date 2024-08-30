@@ -1,1 +1,119 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'styles/colors.light';
+@import 'styles/colors.dark';
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    color: white;
+    padding: 1em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.sub-nav {
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+aside {
+    width: 200px;
+    position: fixed;
+    top: 59px;
+    bottom: 0;
+    padding: 1em;
+}
+
+.content {
+    margin-left: 245px;
+    padding: 1em;
+}
+
+body.light-theme {
+    --background-color-sub-nav: #{$background-color-light-sub-nav};
+    --background-color-aside: #{$background-color-light-aside};
+    --background-color-nav: #{$background-color-light-nav};
+    --text-color: #{$text-color-light};
+}
+
+body.dark-theme {
+    --background-color-sub-nav: #{$background-color-dark-sub-nav};
+    --background-color-aside: #{$background-color-dark-aside};
+    --background-color-nav: #{$background-color-dark-nav};
+    --text-color: #{$text-color-dark};
+}
+
+.sub-nav {
+    background-color: var(--background-color-sub-nav);
+}
+
+aside {
+    background-color: var(--background-color-aside);
+}
+
+nav {
+    background-color: var(--background-color-nav);
+}
+
+.sub-nav,
+aside li a,
+nav {
+    color: var(--text-color);
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside ul li {
+    margin: 0;
+}
+
+aside ul li a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+aside ul li a.active {
+    color: #fff;
+    background-color: var(--background-color-nav);;
+}
+
+aside ul li a span {
+    display: flex;
+    align-items: end;
+}
+
+.sub-container {
+    display: flex;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.sub-content {
+    position: relative;
+    width: 100%;
+    flex: 0 0 49%;
+    max-width: 50%;
+}
+
+.right-align {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.padding-align {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.confirmation-box{
+    height: 250px;
+    width: 400px;
+}
